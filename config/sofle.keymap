@@ -57,6 +57,22 @@
         };
     };
 
+    key_overrides {
+        compatible = "zmk,key-overrides";
+
+        bs_del {
+            bindings = <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keys = <BACKSPACE>;
+        };
+
+        esc_caps {
+            bindings = <&kp CAPS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keys = <ESCAPE>;
+        };
+    };
+
     behaviors {
         caps: caps {
             compatible = "zmk,behavior-caps-word";
