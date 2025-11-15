@@ -124,7 +124,7 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp GRAVE  &trans           &trans       &trans     &kp END     &trans                         &trans          &trans          &trans        &trans                &kp HOME               &trans
+&kp GRAVE  &trans           &trans       &trans     &kp END     &trans                         &trans          &trans          &trans        &trans                &kp HOME               &kp DELETE
 &trans     &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT                    &kp CARET       &kp AMPERSAND   &kp ASTRK     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
 &trans     &mkp MB1         &mkp RCLK    &mkp MCLK  &trans      &trans                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT       &trans                 &trans
 &trans     &trans           &trans       &trans     &trans      &trans       &trans    &trans  &trans          &trans          &trans        &trans                &trans                 &trans
@@ -154,9 +154,7 @@
                              &trans     &trans      &trans       &kp ENTER  &trans    &trans     &kp SPACE  &trans         &trans        &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LEFT RIGHT_ARROW>,
-                <&rgb_encoder>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT_ARROW>, <&rgb_encoder>;
         };
 
         adjust_layer {
