@@ -86,6 +86,60 @@
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
+
+        mm_fast_left: mm_fast_left {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT>, <&macro_tap &fast_left>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_fast_right: mm_fast_right {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_RIGHT>, <&macro_tap &fast_right>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_fast_up: mm_fast_up {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&macro_tap &fast_up>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_fast_down: mm_fast_down {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_DOWN>, <&macro_tap &fast_down>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    macros {
+        fast_left: fast_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT &mmv MOVE_LEFT>;
+        };
+
+        fast_right: fast_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_RIGHT &mmv MOVE_RIGHT>;
+        };
+
+        fast_up: fast_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_UP &mmv MOVE_UP>;
+        };
+
+        fast_down: fast_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_DOWN &mmv MOVE_DOWN>;
+        };
     };
 
     keymap {
@@ -128,7 +182,7 @@
             bindings = <
 &kp GRAVE  &trans           &trans       &trans     &kp END     &trans                         &trans          &trans          &trans        &trans                &kp HOME               &kp DELETE
 &trans     &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT                    &kp CARET       &kp AMPERSAND   &kp ASTRK     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans     &mkp MB1         &mkp RCLK    &mkp MCLK  &trans      &trans                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT       &trans                 &trans
+&trans     &mkp MB1         &mkp RCLK    &mkp MCLK  &trans      &trans                         &mm_fast_left  &mm_fast_down  &mm_fast_up  &mm_fast_right       &trans                 &trans
 &trans     &trans           &trans       &trans     &trans      &trans       &trans    &trans  &trans          &trans          &trans        &trans                &trans                 &trans
                             &trans       &trans     &trans      &kp ENTER    &trans    &trans  &kp SPACE       &trans          &trans        &trans
             >;
