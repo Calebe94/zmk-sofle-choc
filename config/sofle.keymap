@@ -192,8 +192,8 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>,
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
+                <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
         };
 
         raise_layer {
